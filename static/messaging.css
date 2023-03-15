@@ -1,0 +1,49 @@
+body {
+  font-size: 16px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.messaging { 
+  overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
+.messaging .top { 
+  padding: 1rem;
+}
+.messaging .middle { 
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+  font-weight: 300;
+}
+
+.messaging .bottom { 
+  padding: 10px;
+}
+
+.messaging .bottom { 
+  /* padding-bottom: env(--safe-area-inset-bottom, .5rem); */
+  /* padding-bottom: env(--titlebar-area-height, .5rem); DOES NOT WORK SAFARI */
+}
+
+.messaging .top { 
+  /* padding-top: env(--safe-area-inset-top, .5rem); */
+}
+
+.messaging .bottom textarea { 
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 4rem;
+  padding: 1rem;
+  font-size: 16px;
+}
+.messaging .bottom button { 
+}

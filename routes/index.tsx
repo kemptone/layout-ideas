@@ -6,10 +6,13 @@ export default function Home() {
     <>
       <Head>
         <title>Layout Ideas and Solutions</title>
+        <link rel="stylesheet" href="/style.css" />
       </Head>
       <div>
         <ul>
-          <li>Messaging, Mobile Friendly</li>
+          <li>
+            <a href="/messaging">Messaging, Mobile Friendly</a>
+          </li>
         </ul>
       </div>
     </>
