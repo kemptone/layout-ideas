@@ -9,3 +9,35 @@ calculateHeight();
 
 // We listen to the resize event
 window.addEventListener("resize", calculateHeight);
+
+let isChannel = false;
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("list");
+
+  document.querySelector(".messaging-right .top").addEventListener(
+    "click",
+    (e) => {
+      if (isChannel) {
+        document.body.classList.add("list");
+        document.body.classList.remove("channel");
+      } else {
+        document.body.classList.remove("list");
+        document.body.classList.add("channel");
+      }
+    },
+  );
+
+  document.querySelectorAll(".messaging-left > div").forEach((Element) => {
+    Element.addEventListener("click", (e) => {
+      if (isChannel) {
+        document.body.classList.add("list");
+        document.body.classList.remove("channel");
+      } else {
+        document.body.classList.remove("list");
+        document.body.classList.add("channel");
+      }
+      isChannel = !isChannel;
+    });
+  });
+});

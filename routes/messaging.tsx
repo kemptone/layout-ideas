@@ -1,7 +1,4 @@
 import { Head } from "$fresh/runtime.ts";
-import Counter from "../islands/Counter.tsx";
-
-// https://s3-us-west-1.amazonaws.com/download.talentsky.com/c/qa/HdnmxFZjRT69T_phS3Rh8w/1529688979518_0_46x46.jpg 1x,https://s3-us-west-1.amazonaws.com/download.talentsky.com/c/qa/HdnmxFZjRT69T_phS3Rh8w/1529688979518_0_70x70.jpg 2x,https://s3-us-west-1.amazonaws.com/download.talentsky.com/c/qa/HdnmxFZjRT69T_phS3Rh8w/1529688979518_0_113x113.jpg 3x,https://s3-us-west-1.amazonaws.com/download.talentsky.com/c/qa/HdnmxFZjRT69T_phS3Rh8w/1529688979518_0_180x180.jpg 4x,https://s3-us-west-1.amazonaws.com/download.talentsky.com/c/qa/HdnmxFZjRT69T_phS3Rh8w/1529688979518_0_360x360.jpg 5x
 
 type TMessage = {
   name: string;
@@ -37,8 +34,19 @@ export default function Home() {
         <link rel="stylesheet" href="/messaging.css" />
         <script src="/messaging.js"></script>
       </Head>
-      <div id="messaging">
-        <div className="messaging">
+      <div className="messaging-outer">
+        <div className="messaging-left">
+          {messagings.map((value, index, arr) => {
+            return (
+              <div
+                key={index}
+              >
+                {value.name}
+              </div>
+            );
+          })}
+        </div>
+        <div className="messaging-right">
           <div className="top">
             <h1>This is the header</h1>
           </div>

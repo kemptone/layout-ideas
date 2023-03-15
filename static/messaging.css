@@ -2,48 +2,90 @@ body {
   font-size: 16px;
 }
 
+body * {
+  box-sizing: border-box;
+}
+
 h1 {
   margin: 0;
   padding: 0;
 }
 
-.messaging { 
+.messaging-right {
+  transition: .3s ease-in-out transform;
+}
+
+.list .messaging-outer .messaging-right {
+  transform: translate(0);
+}
+
+.channel .messaging-outer .messaging-right {
+  transform: translate(-100vw);
+}
+
+.messaging-outer {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.messaging-outer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.messaging-left,
+.messaging-right {
+  flex: 0 0 100%;
+  width: 100vw;
+}
+
+.messaging-left {
+  overflow:auto;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.messaging-right {
   overflow:hidden;
   display: flex;
   flex-direction: column;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
 }
-.messaging .top { 
+.messaging-right .top { 
   padding: 1rem;
+  background-color: beige;
 }
-.messaging .middle { 
+.messaging-right .middle { 
   flex: 1;
   overflow: auto;
   padding: 1rem;
   font-weight: 300;
+  background-color:aliceblue;
 }
 
-.messaging .bottom { 
+.messaging-right .bottom { 
   padding: 10px;
+  background-color: bisque;
 }
 
-.messaging .bottom { 
+.messaging-right .bottom { 
+  /* NOT NEEDED AFTERALL */
   /* padding-bottom: env(--safe-area-inset-bottom, .5rem); */
   /* padding-bottom: env(--titlebar-area-height, .5rem); DOES NOT WORK SAFARI */
 }
 
-.messaging .top { 
+.messaging-right .top { 
+  /* NOT NEEDED AFTERALL */
   /* padding-top: env(--safe-area-inset-top, .5rem); */
 }
 
-.messaging .bottom textarea { 
+.messaging-right .bottom textarea { 
   display: block;
   width: 100%;
   box-sizing: border-box;
   height: 4rem;
   padding: 1rem;
   font-size: 16px;
-}
-.messaging .bottom button { 
 }
