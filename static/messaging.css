@@ -11,14 +11,17 @@ h1 {
   padding: 0;
 }
 
+.messaging-left,
 .messaging-right {
-  transition: .3s ease-in-out transform;
+  transition: .24s ease-in-out transform;
 }
 
+.list .messaging-outer .messaging-left,
 .list .messaging-outer .messaging-right {
   transform: translate(0);
 }
 
+.channel .messaging-outer .messaging-left,
 .channel .messaging-outer .messaging-right {
   transform: translate(-100vw);
 }
