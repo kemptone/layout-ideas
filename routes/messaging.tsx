@@ -74,7 +74,7 @@ export default function Home() {
               </div>
               <div className="bottom">
                 <form>
-                  <textarea />
+                  <textarea name="messagetext" />
                   <button type="submit">S</button>
                 </form>
               </div>

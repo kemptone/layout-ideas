@@ -31,6 +31,21 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".messaging-outer .messaging-right form")
     .addEventListener("submit", (e) => {
       e.preventDefault();
+      const data = new FormData(e.currentTarget);
+      const text = data.get("messagetext");
+      const div = document.createElement("div");
+      div.innerText = text;
+      document.querySelector(".messaging-outer .messaging-right .middle")
+        .appendChild(div);
+
+      document.querySelector(".messaging-outer .messaging-right .middle")
+        .scrollTo(
+          0,
+          99999,
+        );
+
+      document.querySelector(".messaging-outer .messaging-right textarea")
+        .value = "";
     });
 
   document.querySelector(".messaging-outer .messaging-right .middle")
