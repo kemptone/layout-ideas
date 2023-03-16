@@ -36,10 +36,11 @@ window.addEventListener("DOMContentLoaded", () => {
       } else {
         document.body.classList.remove("list");
         document.body.classList.add("channel");
-        document.querySelector(".messaging-outer .middle").scrollTo(
-          0,
-          99999,
-        );
+        document.querySelector(".messaging-outer .messaging-right .middle")
+          .scrollTo(
+            0,
+            99999,
+          );
         // Autofocus does not work in iphone, if you want the animation
         // See this thread: https://stackoverflow.com/questions/5771785/how-can-you-autofocus-on-a-form-field-in-iphone-safari
         // const e_textarea = document.createElement("textarea");
