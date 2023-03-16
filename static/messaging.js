@@ -28,6 +28,11 @@ window.addEventListener("DOMContentLoaded", () => {
     },
   );
 
+  document.querySelector(".messaging-outer .messaging-right form")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+
   document.querySelector(".messaging-outer .messaging-right .middle")
     .scrollTo(
       0,

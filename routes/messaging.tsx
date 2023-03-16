@@ -73,12 +73,7 @@ export default function Home() {
                 <div id="fardo">hello</div>
               </div>
               <div className="bottom">
-                <form
-                  action=""
-                  onSubmit={(e: Event) => {
-                    e.preventDefault();
-                  }}
-                >
+                <form>
                   <textarea />
                   <button type="submit">S</button>
                 </form>
