@@ -31,39 +31,56 @@ export default function Home() {
       <Head>
         <title>Messaging</title>
         <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/header.css" />
+        <link rel="stylesheet" href="/footer.css" />
         <link rel="stylesheet" href="/messaging.css" />
         <script src="/messaging.js"></script>
       </Head>
-      <div className="messaging-outer">
-        <div className="messaging-left">
-          {messagings.map((value, index, arr) => {
-            return (
-              <div
-                key={index}
-              >
-                {value.name}
+      <div id="myapp">
+        <header>
+          <span id="logo" />
+        </header>
+        <main>
+          <div className="messaging-outer">
+            <div className="messaging-left">
+              <div className="top">
+                <h1>Messages</h1>
               </div>
-            );
-          })}
-        </div>
-        <div className="messaging-right">
-          <div className="top">
-            <h1>This is the header</h1>
+              <div className="middle">
+                {messagings.map((value, index, arr) => {
+                  return (
+                    <div
+                      key={index}
+                    >
+                      {value.name}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="messaging-right">
+              <div className="top">
+                <h1>This is the header</h1>
+              </div>
+              <div className="middle">
+                {messagings.map((value, index, arr) => {
+                  return (
+                    <div key={index}>
+                      {value.name}
+                    </div>
+                  );
+                })}
+                <div id="fardo">hello</div>
+              </div>
+              <div className="bottom">
+                <textarea />
+              </div>
+            </div>
           </div>
-          <div className="middle">
-            {messagings.map((value, index, arr) => {
-              return (
-                <div key={index}>
-                  {value.name}
-                </div>
-              );
-            })}
-            <div id="fardo">hello</div>
-          </div>
-          <div className="bottom">
-            <textarea></textarea>
-          </div>
-        </div>
+        </main>
+        <footer>
+          This is the footer
+        </footer>
       </div>
     </>
   );

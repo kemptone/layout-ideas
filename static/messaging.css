@@ -13,17 +13,53 @@ h1 {
 
 .messaging-left,
 .messaging-right {
-  transition: .24s ease-in-out transform;
+  flex: 0 0 50%;
+  width: 50vw;
 }
 
-.list .messaging-outer .messaging-left,
-.list .messaging-outer .messaging-right {
-  transform: translate(0);
-}
+@media screen and (max-width: 640px) {
 
-.channel .messaging-outer .messaging-left,
-.channel .messaging-outer .messaging-right {
-  transform: translate(-100vw);
+  /* body.list .bottom textarea {
+    display: none;
+  } */
+
+  /* body.channel .bottom textarea {
+    display: block;
+  } */
+
+  #myapp > header {
+    display: none;
+  }
+
+  #myapp > main {
+    margin-top:0;
+  }
+
+  body.channel #myapp > footer {
+    display: none;
+  }
+
+  .messaging-left,
+  .messaging-right {
+    transition: .24s ease-in-out transform;
+  }
+
+  body.list .messaging-outer .messaging-left,
+  body.list .messaging-outer .messaging-right {
+    transform: translate(0);
+  }
+
+  body.channel .messaging-outer .messaging-left,
+  body.channel .messaging-outer .messaging-right {
+    transform: translate(-100vw);
+  }
+
+  .messaging-left,
+  .messaging-right {
+    flex: 0 0 100%;
+    width: 100vw;
+  }
+
 }
 
 .messaging-outer {
@@ -37,18 +73,13 @@ h1 {
   overflow: hidden;
 }
 
+.messaging-left .middle {
+  /* overflow:auto; */
+  /* height: 100vh; Fallback for browsers that do not support Custom Properties */
+  /* height: calc(var(--vh, 1vh) * 100); */
+}
+
 .messaging-left,
-.messaging-right {
-  flex: 0 0 100%;
-  width: 100vw;
-}
-
-.messaging-left {
-  overflow:auto;
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-}
-
 .messaging-right {
   overflow:hidden;
   display: flex;
@@ -56,10 +87,12 @@ h1 {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
 }
+.messaging-left .top,
 .messaging-right .top { 
   padding: 1rem;
   background-color: beige;
 }
+.messaging-left .middle,
 .messaging-right .middle { 
   flex: 1;
   overflow: auto;

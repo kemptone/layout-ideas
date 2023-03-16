@@ -1,0 +1,9 @@
+#myapp > footer {
+  height:55px;
+  position: fixed;
+  bottom: 0;
+  background-color: gold;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 10px;
+}
