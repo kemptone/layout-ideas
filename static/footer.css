@@ -1,9 +1,15 @@
 #myapp > footer {
-  height:55px;
-  position: fixed;
-  bottom: 0;
-  background-color: gold;
-  width: 100vw;
-  box-sizing: border-box;
-  padding: 10px;
+  display: none;
+}
+@media screen and (max-width: 640px) {
+  #myapp > footer {
+    display: block;
+    height:55px;
+    position: fixed;
+    bottom: 0;
+    background-color: gold;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 10px;
+  }
 }

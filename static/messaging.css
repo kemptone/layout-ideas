@@ -1,3 +1,8 @@
+html, body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 body {
   font-size: 16px;
 }
@@ -9,6 +14,7 @@ body * {
 h1 {
   margin: 0;
   padding: 0;
+  font-size: 24px;
 }
 
 .messaging-left,
@@ -84,9 +90,20 @@ h1 {
   overflow:hidden;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(100vh - 55px);
 }
+
+@media screen and (max-width: 640px) {
+  .messaging-left,
+  .messaging-right {
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
 .messaging-left .top,
 .messaging-right .top { 
   padding: 1rem;
