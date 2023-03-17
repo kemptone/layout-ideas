@@ -133,7 +133,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const data = new FormData(e.currentTarget);
       const text = data.get("messagetext");
       const div = document.createElement("div");
-      div.innerText = text;
+      div.innerHTML = text;
       document.querySelector(".messaging-outer .messaging-right .middle")
         .appendChild(div);
 

@@ -38,7 +38,9 @@ export default function Home() {
       </Head>
       <div id="myapp">
         <header>
-          <span id="logo" />
+          <div className="inner">
+            <span id="logo" />
+          </div>
         </header>
         <main>
           <div className="messaging-outer">
@@ -60,7 +62,7 @@ export default function Home() {
             </div>
             <div className="messaging-right">
               <div className="top iphone-fixed-height">
-                <button>〈</button>
+                <button type="submit">〈</button>
                 <h1>
                   Channel header
                 </h1>

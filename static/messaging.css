@@ -16,16 +16,56 @@ body * {
 h1 {
   margin: 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 18px;
 }
 
-.messaging-left,
+
+.messaging-outer {
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  /* height: calc(var(--vh, 1vh) * 100); */
+  height: var(--vertical-height, 100vh);
+}
+
+.messaging-outer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  /* border-top: 1px solid rgba(0,0,0,.3); */
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
 .messaging-right {
-  flex: 0 0 75%;
+  flex: 1;
+  max-width: 661px;
+  border-right: 1px solid rgba(0,0,0,.3);
 }
 
 .messaging-left {
-  flex: 0 0 25%;
+  /* flex: 0 0 20%; */
+  min-width: 280px;
+  /* max-width: 300px; */
+  flex: none;
+}
+
+
+.messaging-left,
+.messaging-right {
+  overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 55px);
+  border-left: 1px solid rgba(0,0,0,.3);
+}
+
+@media screen and (max-width: 900px) {
+
+  .messaging-outer {
+    justify-content: flex-start;
+  }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -73,31 +113,6 @@ h1 {
     padding-top:var(--iphone-fixed-height, 0) !important;
   }
 
-}
-
-.messaging-outer {
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  /* height: calc(var(--vh, 1vh) * 100); */
-  height: var(--vertical-height, 100vh);
-}
-
-.messaging-outer {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  border-top: 1px solid rgba(0,0,0,.3);
-}
-
-.messaging-left,
-.messaging-right {
-  overflow:hidden;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 55px);
-  border-left: 1px solid rgba(0,0,0,.3);
-}
-
-@media screen and (max-width: 640px) {
   .messaging-left,
   .messaging-right {
     overflow:hidden;
