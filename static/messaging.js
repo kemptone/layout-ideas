@@ -42,32 +42,38 @@ function onTheFocus(isInFocus) {
       `${height}px`,
     );
 
-    if (DEBUG) {
-      // FOR TESTING IPHONE ONLY
-      const e_div = document.createElement("div");
-      if (isInFocus) {
-        e_div.innerHTML = "triggered focusin :" + height;
-      } else {
-        e_div.innerHTML = "triggered focusout :" + height;
-      }
+    // if (DEBUG) {
+    //   // FOR TESTING IPHONE ONLY
+    //   const e_div = document.createElement("div");
+    //   if (isInFocus) {
+    //     e_div.innerHTML = "triggered focusin :" + height;
+    //   } else {
+    //     e_div.innerHTML = "triggered focusout :" + height;
+    //   }
 
-      e_div.className = "test2";
+    //   e_div.className = "test2";
 
-      e_parent = document.querySelector(
-        ".messaging-outer .messaging-right .middle",
-      );
+    //   e_parent = document.querySelector(
+    //     ".messaging-outer .messaging-right .middle",
+    //   );
 
-      if (e_parent) {
-        e_parent.appendChild(e_div);
-        e_parent.scrollTo(
-          0,
-          99999,
-        );
-      }
-    }
+    //   if (e_parent) {
+    //     e_parent.appendChild(e_div);
+    //     e_parent.scrollTo(
+    //       0,
+    //       99999,
+    //     );
+    //   }
+    // }
   }
 
-  return () => setTimeout(focus, 100);
+  return () => {
+    // setTimeout(focus, 0);
+    // setTimeout(focus, 20);
+    setTimeout(focus, 60);
+    // setTimeout(focus, 100);
+    setTimeout(focus, 200);
+  };
 }
 
 // So, will need something like this, that recalculates
@@ -92,6 +98,21 @@ window.addEventListener("DOMContentLoaded", () => {
     `${h_iphone_fixed_height}px`,
   );
 
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
+  // NOT NEEDED
   document.querySelector(".messaging-right .top button").addEventListener(
     "click",
     (e) => {
@@ -105,6 +126,7 @@ window.addEventListener("DOMContentLoaded", () => {
     },
   );
 
+  // NOT NEEDED
   document.querySelector(".messaging-outer .messaging-right form")
     .addEventListener("submit", (e) => {
       e.preventDefault();
@@ -125,6 +147,7 @@ window.addEventListener("DOMContentLoaded", () => {
         .value = "";
     });
 
+  // NOT NEEDED
   // initial scroll of the right, probably will not need this
   document.querySelector(".messaging-outer .messaging-right .middle")
     .scrollTo(
@@ -132,6 +155,7 @@ window.addEventListener("DOMContentLoaded", () => {
       99999,
     );
 
+  // NOT NEEDED
   // Clicking behavior, Absolutely will not need this
   function toggleOff(e) {
     console.log({
@@ -170,12 +194,14 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 500);
   }
 
+  // NOT NEEDED
   // Back / Forth button, ABSOLUTELY will not need this
   document.querySelector(".messaging-right .top button").addEventListener(
     "click",
     toggleOff,
   );
 
+  // NOT NEEDED
   // Back / Forth button, ABSOLUTELY will not need this
   document.querySelectorAll(".messaging-left .middle > div").forEach(
     (Element) => {
