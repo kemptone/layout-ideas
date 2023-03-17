@@ -59,15 +59,17 @@ export default function Home() {
               </div>
             </div>
             <div className="messaging-right">
-              <div className="top">
+              <div className="top iphone-fixed-height">
                 <button>〈</button>
-                <h1>Channel header</h1>
+                <h1>
+                  Channel header
+                </h1>
               </div>
               <div className="middle">
                 {messagings.map((value, index, arr) => {
                   return (
                     <div key={index}>
-                      {value.name}
+                      {String(index)} - {value.name}
                     </div>
                   );
                 })}

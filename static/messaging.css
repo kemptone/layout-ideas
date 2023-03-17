@@ -63,11 +63,14 @@ h1 {
     width: 100vw;
   }
 
-  .messaging-right .top {
+  .messaging-right .iphone-fixed-height {
     position: fixed;
     width: 100vw;
     top:var(--offset-height);
-    /* top:400px; */
+  }
+
+  .messaging-right .middle {
+    padding-top:var(--iphone-fixed-height, 0) !important;
   }
 
 }
@@ -177,6 +180,11 @@ h1 {
   top: 50%;
   margin: -40px 0 0 0;
   height: 78px;
+}
+
+.messaging-right .top {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 641px) {

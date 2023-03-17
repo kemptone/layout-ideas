@@ -83,6 +83,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.body.classList.add("list");
 
+  const h_iphone_fixed_height =
+    document.querySelector(".messaging-right .iphone-fixed-height")
+      .clientHeight;
+
+  document.documentElement.style.setProperty(
+    "--iphone-fixed-height",
+    `${h_iphone_fixed_height}px`,
+  );
+
   document.querySelector(".messaging-right .top button").addEventListener(
     "click",
     (e) => {
