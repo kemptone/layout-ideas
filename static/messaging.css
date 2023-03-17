@@ -20,10 +20,19 @@ h1 {
 }
 
 
+
 .messaging-outer {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   /* height: calc(var(--vh, 1vh) * 100); */
   height: var(--vertical-height, 100vh);
+}
+
+#myapp > header .inner {
+  max-width: 1220px;
+}
+
+.messaging-outer {
+  max-width: 1240px;
 }
 
 .messaging-outer {
@@ -33,13 +42,12 @@ h1 {
   /* border-top: 1px solid rgba(0,0,0,.3); */
   justify-content: flex-start;
   width: 100%;
-  max-width: 1240px;
   margin: 0 auto;
 }
 
 .messaging-right {
   flex: 1;
-  max-width: 661px;
+  /* max-width: 661px; */
   border-right: 1px solid rgba(0,0,0,.3);
 }
 
