@@ -54,25 +54,58 @@ window.addEventListener("DOMContentLoaded", () => {
       99999,
     );
 
-  document.querySelectorAll(".messaging-left > div").forEach((Element) => {
-    Element.addEventListener("click", (e) => {
-      if (isChannel) {
-        document.body.classList.add("list");
-        document.body.classList.remove("channel");
-      } else {
-        document.body.classList.remove("list");
-        document.body.classList.add("channel");
-        // Autofocus does not work in iphone, if you want the animation
-        // See this thread: https://stackoverflow.com/questions/5771785/how-can-you-autofocus-on-a-form-field-in-iphone-safari
-        // const e_textarea = document.createElement("textarea");
-        // e_textarea.autofocus = true;
-        // setTimeout(() => {
-        //   document.querySelector("#myapp .messaging-outer .bottom").appendChild(
-        //     e_textarea,
-        //   );
-        // }, 600);
-      }
-      isChannel = !isChannel;
+  function toggleOff(e) {
+    console.log({
+      isChannel,
     });
-  });
+
+    // should clear he clicked status
+    document.querySelectorAll(".messaging-left .middle > div").forEach(
+      (Element) => Element.classList.remove("clicked"),
+    );
+
+    // this is hacky, only shows for a few seconds on mobile
+    if (e.target.tagName === "DIV") {
+      e.target.classList.add("clicked");
+    }
+
+    if (isChannel) {
+      document.body.classList.remove("channel");
+      document.body.classList.add("list");
+    } else {
+      document.body.classList.remove("list");
+      document.body.classList.add("channel");
+      // Autofocus does not work in iphone, if you want the animation
+      // See this thread: https://stackoverflow.com/questions/5771785/how-can-you-autofocus-on-a-form-field-in-iphone-safari
+      // const e_textarea = document.createElement("textarea");
+      // e_textarea.autofocus = true;
+      // setTimeout(() => {
+      //   document.querySelector("#myapp .messaging-outer .bottom").appendChild(
+      //     e_textarea,
+      //   );
+      // }, 600);
+    }
+    // flip it
+    setTimeout(() => {
+      isChannel = !isChannel;
+    }, 500);
+  }
+
+  document.querySelector(".messaging-right .top button").addEventListener(
+    "click",
+    toggleOff,
+  );
+
+  // document.querySelector(".messaging-right .top button").addEventListener(
+  //   "click",
+  //   (e) => {
+  //     e.currentTarget.classList.add("clicked");
+  //   },
+  // );
+
+  document.querySelectorAll(".messaging-left .middle > div").forEach(
+    (Element) => {
+      Element.addEventListener("click", toggleOff);
+    },
+  );
 });

@@ -30,11 +30,11 @@ export default function Home() {
     <>
       <Head>
         <title>Messaging</title>
-        <link rel="stylesheet" href="/style.css" />
-        <link rel="stylesheet" href="/header.css" />
-        <link rel="stylesheet" href="/footer.css" />
-        <link rel="stylesheet" href="/messaging.css" />
-        <script src="/messaging.js"></script>
+        <link rel="stylesheet" href="/style.css?fa" />
+        <link rel="stylesheet" href="/header.css?23" />
+        <link rel="stylesheet" href="/footer.css?23" />
+        <link rel="stylesheet" href="/messaging.css?234" />
+        <script src="/messaging.js?3234"></script>
       </Head>
       <div id="myapp">
         <header>
@@ -60,7 +60,8 @@ export default function Home() {
             </div>
             <div className="messaging-right">
               <div className="top">
-                <h1>This is the header</h1>
+                <button>〈</button>
+                <h1>Channel header</h1>
               </div>
               <div className="middle">
                 {messagings.map((value, index, arr) => {
@@ -74,7 +75,7 @@ export default function Home() {
               </div>
               <div className="bottom">
                 <form>
-                  <textarea name="messagetext" />
+                  <textarea name="messagetext" colSpan={3} cols={3} />
                   <button type="submit">S</button>
                 </form>
               </div>

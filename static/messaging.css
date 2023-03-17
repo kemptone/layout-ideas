@@ -21,8 +21,11 @@ h1 {
 
 .messaging-left,
 .messaging-right {
-  flex: 0 0 50%;
-  width: 50vw;
+  flex: 0 0 75%;
+}
+
+.messaging-left {
+  flex: 0 0 25%;
 }
 
 @media screen and (max-width: 640px) {
@@ -79,12 +82,7 @@ h1 {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-}
-
-.messaging-left .middle {
-  /* overflow:auto; */
-  /* height: 100vh; Fallback for browsers that do not support Custom Properties */
-  /* height: calc(var(--vh, 1vh) * 100); */
+  border-top: 1px solid rgba(0,0,0,.3);
 }
 
 .messaging-left,
@@ -93,6 +91,7 @@ h1 {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 55px);
+  border-left: 1px solid rgba(0,0,0,.3);
 }
 
 @media screen and (max-width: 640px) {
@@ -107,9 +106,10 @@ h1 {
 }
 
 .messaging-left .top,
-.messaging-right .top { 
+.messaging-right .top {
   padding: 1rem;
   background-color: beige;
+  border-bottom: 1px solid rgba(0,0,0,.3);
 }
 .messaging-left .middle,
 .messaging-right .middle { 
@@ -120,38 +120,70 @@ h1 {
   background-color:aliceblue;
 }
 
+.messaging-left .middle div:hover {
+  background-color: aquamarine;
+}
+
+.messaging-left .middle div.clicked {
+  background-color: aquamarine;
+}
+
+.messaging-left .middle div {
+  cursor: pointer;
+  padding: .4em 1.1em;
+  align-items: center;
+}
+
+.messaging-left .middle div > * {
+}
+
+.messaging-left .middle div:before {
+  content:"⌛";
+  font-size: 24px;
+  width: min-content;
+  height: min-content;
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,.3);
+  padding: .1em;
+  margin-right: .5em;
+}
+
 .messaging-right .bottom { 
   padding: 10px;
   background-color: bisque;
 }
 
-.messaging-right .bottom { 
-  /* NOT NEEDED AFTERALL */
-  /* padding-bottom: env(--safe-area-inset-bottom, .5rem); */
-  /* padding-bottom: env(--titlebar-area-height, .5rem); DOES NOT WORK SAFARI */
-}
-
-.messaging-right .top { 
-  /* NOT NEEDED AFTERALL */
-  /* padding-top: env(--safe-area-inset-top, .5rem); */
-}
-
-.messaging-right .bottom { 
+.messaging-right .bottom {
   position: relative;
+  border-top: 1px solid rgba(0,0,0,.3);
 }
 
-.messaging-right .bottom textarea { 
+/* THESE ARE NOT IMPORTANT CLASSES... JUST FOR DEMO AND MY SANITY */
+
+.messaging-right .bottom textarea {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  height: 4rem;
-  padding: 1rem;
+  height: 6em;
+  padding: .5em;
   font-size: 16px;
 }
 
 .messaging-right .bottom button {
   position: absolute;
-  right: 23px;
+  right: 19px;
   top: 50%;
-  margin: -10px 0 0 0;
+  margin: -40px 0 0 0;
+  height: 78px;
+}
+
+@media screen and (min-width: 641px) {
+  .messaging-right .top button {
+    display: none;
+  }
+}
+
+
+.messaging-left .middle {
+  padding: 0;
 }
