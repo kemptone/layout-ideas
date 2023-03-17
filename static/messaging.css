@@ -74,7 +74,8 @@ h1 {
 
 .messaging-outer {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
+  /* height: calc(var(--vh, 1vh) * 100); */
+  height: var(--vertical-height, 100vh);
 }
 
 .messaging-outer {
@@ -100,7 +101,8 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
+    height: var(--vertical-height, 100vh);
   }
 
 }
